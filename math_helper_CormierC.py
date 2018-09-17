@@ -23,9 +23,10 @@ def distance(x,x2,y,y2):
     '''
     
 def main():
-    pass
+    distance(2,4,4,2)
+    
     
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    #main()
+    main()
