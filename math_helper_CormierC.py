@@ -8,7 +8,7 @@ import math
 
 def distance(x,x2,y,y2):
     '''
-        returns the distance of 2 points
+        returns the distance of 2 points in root form
         
         >>> distance(2,4,4,2)
         root 8
@@ -40,9 +40,31 @@ def quadratic(a,b,c):
     q1 = (-b + math.sqrt(b)**2 - 4(a)(c)) / 2(a)
     q2 = (-b - math.sqrt(b)**2 - 4(a)(c)) / 2(a)
     print(q1,q2)
+    
+def midpoint(x1,x2,y1,y2):
+    '''
+    finds the midpoint of 2 points
+    >>> midpoint(1,1,2,2)
+    (1.0,2.0)
+    >>> midpoint(4,2,7,2)
+    (3,4.5)
+    >>> midpoint(9,6,8,1)
+    (7.5,4.5)
+    '''
+    x = (x1 + x2)/2
+    y = (y1 + y2) / 2
+    ans = float(x)
+    ans2 = float(y)
+    hi = str(ans)
+    hi2 = str(ans2)
+    print( '('+ hi + ',' + hi2 + ')')
 def main():
+    distance(2,4,4,2)
     distance(5,3,9,7)
     distance(9,3,10,6)
+    midpoint(1,1,2,2)
+    midpoint(4,2,7,2)
+    midpoint(9,6,8,1)
     
     
 if __name__ == "__main__":
