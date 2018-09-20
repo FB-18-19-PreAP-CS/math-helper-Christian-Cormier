@@ -74,10 +74,12 @@ def midpoint(x1,x2,y1,y2):
 #    print(d)
     
 def main():
-    ans = input ()
+    inp = raw_input("which formula do you want?- \n1.distance \n2.quadratic \n3.midpoint \n--")
     while True:
-        if ans == 1:
-            pass
+        if inp == str(distance):
+            ask = input("what are your two points? \n--")
+        else:
+            print("please type in an an actual formula")
             #equation
     distance(2,4,4,2)
     distance(5,3,9,7)
@@ -94,4 +96,4 @@ def main():
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    #main()
+    main()
