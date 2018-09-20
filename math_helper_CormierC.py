@@ -29,17 +29,21 @@ def quadratic(a,b,c):
     '''
     gives the the quadratic form of 3 numbers
     
-    >>> quadratic(1,2,3)
-    
-    >>> quadratic(2,4,6)
-    
-    >>> quadratic(9,5,12)
-    
+    >>> quadratic(1,2,1)
+    -1,-1
+    >>> quadratic(3,7,-6)
+    2/3,-3
+    >>> quadratic(6,-7,-3)
+    7,7
     '''
     
-    q1 = (-b + math.sqrt(b)**2 - 4(a)(c)) / 2(a)
-    q2 = (-b - math.sqrt(b)**2 - 4(a)(c)) / 2(a)
-    print(q1,q2)
+    q1 = (-b + math.sqrt(b)**2 - 4*(a)*(c)) / 2*(a)
+    q2 = (-b - math.sqrt(b)**2 - 4*(a)*(c)) / 2*(a)
+    ans = int(q1)
+    ans2 = int(q2)
+    hi = str(ans)
+    hi2 = str(ans2)
+    print(hi + ',' + hi2)
     
 def midpoint(x1,x2,y1,y2):
     '''
@@ -47,7 +51,7 @@ def midpoint(x1,x2,y1,y2):
     >>> midpoint(1,1,2,2)
     (1.0,2.0)
     >>> midpoint(4,2,7,2)
-    (3,4.5)
+    (3.0,4.5)
     >>> midpoint(9,6,8,1)
     (7.5,4.5)
     '''
@@ -58,16 +62,36 @@ def midpoint(x1,x2,y1,y2):
     hi = str(ans)
     hi2 = str(ans2)
     print( '('+ hi + ',' + hi2 + ')')
+    
+#def circle(h,k):
+#    #(x-h)**2 + (y-k)**2 = r**2 the formula
+#    '''
+#    finds the equation of a circle of a circle using the midpoint of said circle
+#    '''
+#    d = (x-h)**2 + (y-k)**2
+##    ans = int(d)
+##    hi = str(ans)
+#    print(d)
+    
 def main():
+    ans = input ()
+    while True:
+        if ans == 1:
+            pass
+            #equation
     distance(2,4,4,2)
     distance(5,3,9,7)
     distance(9,3,10,6)
+    quadratic(1,2,1)
+    quadratic(3,7,-6)
+    quadratic(6,-7,-3)
     midpoint(1,1,2,2)
     midpoint(4,2,7,2)
     midpoint(9,6,8,1)
     
     
+    
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    main()
+    #main()
