@@ -74,7 +74,7 @@ def midpoint(x1,x2,y1,y2):
 #    print(d)
     
 def main():
-    inp = raw_input("which formula do you want?- \n1.distance \n2.quadratic \n3.midpoint \n--")
+    inp = input("which formula do you want?- \n1.distance \n2.quadratic \n3.midpoint \n--")
     while True:
         if inp == str(distance):
             ask = input("what are your two points? \n--")
