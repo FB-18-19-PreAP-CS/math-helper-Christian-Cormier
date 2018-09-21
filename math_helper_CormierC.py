@@ -27,7 +27,8 @@ def distance(x,x2,y,y2):
     
 def quadratic(a,b,c):
     '''
-    gives the the quadratic form of 3 numbers
+    finds the solutions to a quadratic equation of
+    the form ax^2 + bx + c = 0
     
     >>> quadratic(1,2,1)
     -1,-1
@@ -37,13 +38,13 @@ def quadratic(a,b,c):
     7,7
     '''
     
-    q1 = (-b + math.sqrt(b)**2 - 4*(a)*(c)) / 2*(a)
-    q2 = (-b - math.sqrt(b)**2 - 4*(a)*(c)) / 2*(a)
-    ans = int(q1)
-    ans2 = int(q2)
-    hi = str(ans)
-    hi2 = str(ans2)
-    print(hi + ',' + hi2)
+    q1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
+    q2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
+    #ans = int(q1)
+    #ans2 = int(q2)
+    #hi = str(ans)
+    #hi2 = str(ans2)
+    print(f'{q1:.1f},{q2:.1f}')
     
 def midpoint(x1,x2,y1,y2):
     '''
@@ -96,4 +97,4 @@ def main():
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    main()
+    #main()
