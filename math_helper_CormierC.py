@@ -40,7 +40,15 @@ def quadratic(a,b,c):
     
     q1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
     q2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
+<<<<<<< HEAD
     print(f'{q1:.2f},{q2:.2f}')
+=======
+    #ans = int(q1)
+    #ans2 = int(q2)
+    #hi = str(ans)
+    #hi2 = str(ans2)
+    print(f'{q1:.1f},{q2:.1f}')
+>>>>>>> eef01c1f244c5f27b9a14809c7fcd051fe227ac6
     
 def midpoint(x1,x2,y1,y2):
     '''
@@ -159,9 +167,13 @@ def main():
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
+<<<<<<< HEAD
     main()
     
 
     
 
 
+=======
+    #main()
+>>>>>>> eef01c1f244c5f27b9a14809c7fcd051fe227ac6
