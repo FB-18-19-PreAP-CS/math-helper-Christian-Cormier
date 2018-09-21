@@ -27,23 +27,20 @@ def distance(x,x2,y,y2):
     
 def quadratic(a,b,c):
     '''
-    gives the the quadratic form of 3 numbers
+    finds the solutions to a quadratic equation of
+    the form ax^2 + bx + c = 0
     
     >>> quadratic(1,2,1)
-    -1,-1
+    -1.00,-1.00
     >>> quadratic(3,7,-6)
-    2/3,-3
+    .67,-3.00
     >>> quadratic(6,-7,-3)
-    7,7
+    1.50,-0.33
     '''
     
-    q1 = (-b + math.sqrt(b)**2 - 4*(a)*(c)) / 2*(a)
-    q2 = (-b - math.sqrt(b)**2 - 4*(a)*(c)) / 2*(a)
-    ans = int(q1)
-    ans2 = int(q2)
-    hi = str(ans)
-    hi2 = str(ans2)
-    print(hi + ',' + hi2)
+    q1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
+    q2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
+    print(f'{q1:.2f},{q2:.2f}')
     
 def midpoint(x1,x2,y1,y2):
     '''
@@ -63,33 +60,99 @@ def midpoint(x1,x2,y1,y2):
     hi2 = str(ans2)
     print( '('+ hi + ',' + hi2 + ')')
     
-#def circle(h,k):
-#    #(x-h)**2 + (y-k)**2 = r**2 the formula
+def circle(r):
 #    '''
-#    finds the equation of a circle of a circle using the midpoint of said circle
+#    finds the diameter of a circle
+#    
+#    >>>circle(4)
+#    50.24
+#    
+#    >>circle(2)
+#    12.16
+#    
+#    >>>circle(5)
+#    78.5  
 #    '''
-#    d = (x-h)**2 + (y-k)**2
-##    ans = int(d)
-##    hi = str(ans)
-#    print(d)
+    r2 = r**2 * 3.14
+    return(r2)
+
+
+
+def run_dist():
+    print("You selected distance.")
+    x1= int(input("Enter your first x coordinate: "))
+    x2= int(input("Enter your second x coordinate: "))
+    y1= int(input("Enter your first y coordinate: "))
+    y2= int(input("Enter your second y coordinate: "))
+    print("The distance is {}".format(distance(x1,x2,y1,y2)))
+    
+def run_quad():
+    print("you selected quadratic")
+    a = int(input("enter a: "))
+    b = int(input("enter b: "))
+    c = int(input("enter c: "))
+    print("the quadratic is {}".format(quadratic(a,b,c)))
+    
+def run_circ():
+    print("You selected area of a circle.")
+    r= int(input("Enter the radius: "))
+    print("The area of the circle is {}".format(circle(r)))
+    
+    
+def run_mid():
+    print("You selected midpoint.")
+    x1= int(input("Enter your first x coordinate: "))
+    x2= int(input("Enter your second x coordinate: "))
+    y1= int(input("Enter your first y coordinate: "))
+    y2= int(input("Enter your second y coordinate: "))
+    print("The midpoint is {}".format(midpoint(x1,x2,y1,y2)))
+    
     
 def main():
-    inp = input("which formula do you want?- \n1.distance \n2.quadratic \n3.midpoint \n--")
+    inp = input("which formula do you want?- \n(1).distance \n(2).quadratic \n(3).midpoint \n(4).Circle \n--")
     while True:
-        if inp == str(distance):
-            ask = input("what are your two points? \n--")
+        if inp == "1":
+            run_dist()
+            cont = input("do you want to continue: ")
+            if cont == "yes":
+                main()
+            elif cont == "no":
+                break
+        elif inp == "2":
+            run_quad()
+            cont = input("do you want to continue: ")
+            if cont == "yes":
+                main()
+            elif cont == "no":
+                break
+        elif inp == "3":
+            run_mid()
+            cont = input("do you want to continue: ")
+            if cont == "yes":
+                main()
+            elif cont == "no":
+                break
+        elif inp == "4":
+            run_circ()
+            cont = input("do you want to continue: ")
+            if cont == "yes":
+                main()
+            elif cont == "no":
+                break
         else:
-            print("please type in an an actual formula")
-            #equation
-    distance(2,4,4,2)
-    distance(5,3,9,7)
-    distance(9,3,10,6)
-    quadratic(1,2,1)
-    quadratic(3,7,-6)
-    quadratic(6,-7,-3)
-    midpoint(1,1,2,2)
-    midpoint(4,2,7,2)
-    midpoint(9,6,8,1)
+            print("thats not an appropriate value")
+            main()
+            break
+        
+#    distance(2,4,4,2)
+#    distance(5,3,9,7)
+#    distance(9,3,10,6)
+#    quadratic(1,2,1)
+#    quadratic(3,7,-6)
+#    quadratic(6,-7,-3)
+#    midpoint(1,1,2,2)
+#    midpoint(4,2,7,2)
+#    midpoint(9,6,8,1)
     
     
     
@@ -97,3 +160,8 @@ if __name__ == "__main__":
     import doctest
     doctest.testmod()
     main()
+    
+
+    
+
+
