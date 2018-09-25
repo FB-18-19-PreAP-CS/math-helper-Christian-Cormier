@@ -53,11 +53,11 @@ def midpoint(x1,x2,y1,y2):
     '''
     finds the midpoint of 2 points
     >>> midpoint(1,1,2,2)
-    (1.0,2.0)
+    the midpoitn is (1.0,2.0)
     >>> midpoint(4,2,7,2)
-    (3.0,4.5)
+    the midpoint is (3.0,4.5)
     >>> midpoint(9,6,8,1)
-    (7.5,4.5)
+    the midpoint is (7.5,4.5)
     '''
     x = (x1 + x2)/2
     y = (y1 + y2) / 2
@@ -65,20 +65,20 @@ def midpoint(x1,x2,y1,y2):
     ans2 = float(y)
     hi = str(ans)
     hi2 = str(ans2)
-    return(f' ( {x:.1f} ) , ( {y:.1f) } ')
+    return(f' ({x:.1f}) , ({y:.1f})')
     
 def circle(r):
     '''
     finds the area of a circle using 3.14 for pi
     
     >>> circle(4)
-    50.24
+    the area of the circle is 50.24
     
     >>> circle(2)
-    12.16
+    the area of the circle is 12.16
     
     >>> circle(5)
-    78.5  
+    the area of the circle is 78.5  
     '''
     r2 = r**2 * 3.14
     return(r2)
