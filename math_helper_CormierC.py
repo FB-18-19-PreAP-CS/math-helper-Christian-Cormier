@@ -11,19 +11,19 @@ def distance(x,x2,y,y2):
         returns the unsimplified istance of 2 points in root form
         
         >>> distance(2,4,4,2)
-        root 8
+        the distance is root 8
         
         >>> distance(5,3,9,7)
-        root 8
+        the distance is root 8
         
         >>> distance(9,3,10,6)
-        root 52
+        the distance is root 52
         
         >>> distance(-2,-6,4,9)
-        root 41
+        the distance is root 41
         
         >>> distance(10,20,10,30
-        root 500
+        the distance is root 500
         
     '''
     
@@ -52,10 +52,13 @@ def quadratic(a,b,c):
 def midpoint(x1,x2,y1,y2):
     '''
     finds the midpoint of 2 points
+    
     >>> midpoint(1,1,2,2)
-    the midpoitn is (1.0,2.0)
+    the midpoint is (1.0,2.0)
+    
     >>> midpoint(4,2,7,2)
     the midpoint is (3.0,4.5)
+    
     >>> midpoint(9,6,8,1)
     the midpoint is (7.5,4.5)
     '''
@@ -78,10 +81,17 @@ def circle(r):
     the area of the circle is 12.16
     
     >>> circle(5)
-    the area of the circle is 78.5  
+    the area of the circle is 78.5
+    
+    >>> circle(-3)
+    no negative radius allowed
+    
+    >>> circle(93)
+    the area of the circle is 27157.86
+    
     '''
     r2 = r**2 * 3.14
-    return(r2)
+    return(round(r2,2))
 
 
 
