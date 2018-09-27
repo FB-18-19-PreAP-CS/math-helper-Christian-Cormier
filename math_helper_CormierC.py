@@ -126,36 +126,50 @@ def run_mid():
     
     
 def main():
-    inp = input("which formula do you want?- \n(1).distance \n(2).quadratic \n(3).midpoint \n(4).Circle \n--")
+    inp = input("which formula do you want?- \n(1).distance \n(2).quadratic \n(3).midpoint \n(4).circle \n(5).quit \n-- ")
     while True:
         if inp == "1":
             run_dist()
-            cont = input("do you want to continue: ")
-            if cont.lower() == "yes":
-                main()
-            if cont.lower() == "no":
-                break
+            while True:
+                cont = input("do you want to continue (yes/no): ")
+                print()
+                if cont.lower() == "yes":
+                    main()
+                elif cont.lower() == "no":
+                    break
+                else:
+                    print("Invalid input")
+                    print()
+            break
+                
         elif inp == "2":
             run_quad()
-            cont = input("do you want to continue: ")
+            cont = input("do you want to continue (yes/no): ")
+            print()
             if cont.lower() == "yes":
                 main()
-            if cont.lower() == "no":
+            elif cont.lower() == "no":
                 break
+            
         elif inp == "3":
             run_mid()
-            cont = input("do you want to continue: ")
+            cont = input("do you want to continue (yes/no): ")
             if cont.lower() == "yes":
                 main()
-            if cont.lower() == "no":
+            elif cont.lower() == "no":
                 break
+            
         elif inp == "4":
             run_circ()
-            cont = input("do you want to continue: ")
+            cont = input("do you want to continue (yes/no): ")
             if cont.lower() == "yes":
                 main()
             if cont.lower() == "no":
                 break
+            
+        elif inp == '5':
+            break
+            
         else:
             print("thats not an appropriate value")
             main()
@@ -166,8 +180,8 @@ def main():
     
     
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+    #import doctest
+    #doctest.testmod()
     main()
     
 
