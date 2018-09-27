@@ -36,11 +36,15 @@ def quadratic(a,b,c):
     the form ax^2 + bx + c = 0
     
     >>> quadratic(1,2,1)
-    the quadratic is -1.00,-1.00
+    1.00,-1.00
     >>> quadratic(3,7,-6)
-    the quadratic is .67,-3.00
+    .67,-3.00
     >>> quadratic(6,-7,-3)
-    the quadratic is 1.50,-0.33
+    1.50,-0.33
+    >>> quadratic(1,8,9)
+    -1.35,-6.65
+    >>> quadratic(-6,-6,9)
+    -1.82,0.82
     '''
     
     q1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
@@ -54,13 +58,19 @@ def midpoint(x1,x2,y1,y2):
     finds the midpoint of 2 points
     
     >>> midpoint(1,1,2,2)
-    the midpoint is (1.0,2.0)
+    (1.0,2.0)
     
     >>> midpoint(4,2,7,2)
-    the midpoint is (3.0,4.5)
+    (3.0,4.5)
     
     >>> midpoint(9,6,8,1)
-    the midpoint is (7.5,4.5)
+    (7.5,4.5)
+    
+    >>> midpoint(-4,-7,4,7)
+    (-5.5,5.5)
+    
+    >>> midpoint(9,5,0,2)
+    (7.0,1.0)
     '''
     x = (x1 + x2)/2
     y = (y1 + y2) / 2
@@ -68,7 +78,7 @@ def midpoint(x1,x2,y1,y2):
     ans2 = float(y)
     hi = str(ans)
     hi2 = str(ans2)
-    return(f' ({x:.1f}) , ({y:.1f})')
+    return(f'({x:.1f},{y:.1f})')
     
 def circle(r):
     '''
@@ -87,11 +97,33 @@ def circle(r):
     no negative radius allowed
     
     >>> circle(93)
-    the area of the circle is 27157.86
+    27157.86
     
     '''
     r2 = r**2 * 3.14
     return(round(r2,2))
+
+def sphere(r):
+    '''
+    finds the volume of a sphere
+    >>> sphere(4)
+    267.95
+    
+    >>> sphere(3)
+    113.04
+    
+    >>> sphere(89)
+    2951470.21
+    
+    >>> sphere(0)
+    0.0
+    
+    >>> sphere(10)
+    4186.67
+    '''
+    r2 = 3.14*r**3
+    r3 = (4/3) * r2
+    return(round(r3,2))
 
 
 
@@ -108,12 +140,20 @@ def run_quad():
     a = int(input("enter a: "))
     b = int(input("enter b: "))
     c = int(input("enter c: "))
-    print("the quadratic is {}".format(quadratic(a,b,c)))
+    if a == 0:
+        print("the denominator cant be 0")
+        run_quad()
+    else:
+        print("the quadratic is {}".format(quadratic(a,b,c)))
     
 def run_circ():
     print("You selected area of a circle.")
     r= int(input("Enter the radius: "))
-    print("The area of the circle is {}".format(circle(r)))
+    if r < 0:
+        print("no negative radius allowed")
+        run_circ()
+    elif r >= 0:
+        print("The area of the circle is {}".format(circle(r)))
     
     
 def run_mid():
@@ -124,10 +164,15 @@ def run_mid():
     y2= int(input("Enter your second y coordinate: "))
     print("The midpoint is {}".format(midpoint(x1,x2,y1,y2)))
     
+def run_sphere():
+    print("You selected volume of a sphere.")
+    r= int(input("Enter the radius: "))
+    print("The volume of the sphere is {}".format(sphere(r)))
+    
     
 def main():
-    inp = input("which formula do you want?- \n(1).distance \n(2).quadratic \n(3).midpoint \n(4).circle \n(5).quit \n-- ")
     while True:
+        inp = input("which formula do you want?- \n(1).distance \n(2).quadratic \n(3).midpoint \n(4).circle \n(5).sphere \n(6).quit \n-- ")
         if inp == "1":
             run_dist()
             while True:
@@ -166,8 +211,15 @@ def main():
                 main()
             if cont.lower() == "no":
                 break
+        elif inp == "5":
+            run_sphere()
+            cont = input("do you want to continue (yes/no): ")
+            if cont.lower() == "yes":
+                main()
+            if cont.lower() == "no":
+                break
             
-        elif inp == '5':
+        elif inp == '6':
             break
             
         else:
